@@ -72,7 +72,7 @@
 						<li>Tags</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -165,108 +165,6 @@
 
       <div class="body-wrap">
   
-    <article id="post-Hexo-Git-搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/27/Hexo-Git-搭建个人博客/" class="article-date">
-  	<time datetime="2016-05-27T03:10:20.000Z" itemprop="datePublished">2016-05-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/27/Hexo-Git-搭建个人博客/">Hexo+Git 搭建个人博客</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##配置环境</p>
-<p>安装    <a href="https://nodejs.org/en/" target="_blank" rel="external"><strong>Node.js</strong></a>    （必须）</p>
-<p>作用：用来生成静态页面的</p>
-<p>到<a href="https://nodejs.org/en/" target="_blank" rel="external"><strong>Node.js官网</strong></a>下载相应平台的最新版本，一路安装即可。</p>
-<p>安装    <a href="https://git-scm.com/download/" target="_blank" rel="external"><strong>Git</strong></a>        （必须）</p>
-<p>作用：把本地的hexo内容提交到github上去.</p>
-<p>没安装Git的推荐看下 <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external"><strong>廖雪峰的官方网站</strong></a></p>
-<p>申请 <a href="https://coding.net" target="_blank" rel="external"><strong>Coding</strong></a></p>
-<p>我这里使用的是coding，Coding和Github的使用方式是一样的。</p>
-<p>新建项目，<strong>注意</strong>，博客项目名称必须和用户名一致</p>
-<p>配置SSH公匙</p>
-<p>在个人账户界面，有个SSH公匙，添加你的SSH公匙，怎么生成SSH公匙我就不再叙述了，网上搜索一下很多。</p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p><a href="https://hexo.io" target="_blank" rel="external"><strong>Hexo下载地址</strong></a></p>
-<p>新建一个文件夹，右键 选择<code>Git Bash Here</code></p>
-<ol>
-<li>npm install hexo-cli -g</li>
-<li>hexo init blog </li>
-<li>cd blog</li>
-<li>npm install</li>
-<li>hexo server</li>
-</ol>
-<p>此时本地服务就已经启动成功了，浏览器输入<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> </p>
-<p>现在Hexo还只是本地服务，我们要配置好hexo，提交到git上面。</p>
-<p>现在我们需要配置_config.yml文件，来建立关联</p>
-<p>_config.yml 在blog文件夹根目录下，用文本编辑器打开</p>
-<p>title: 网站标题</p>
-<p>subtitle: 网站副标题</p>
-<p>description: 网站描述</p>
-<p>author: 姓名</p>
-<p>email: 邮箱</p>
-<p>language: 语言  <code>zh-CN</code></p>
-<p>timezone:</p>
-<p>url: 个人域名</p>
-<p>root: /</p>
-<p>permalink: :year/:month/:day/:title/</p>
-<p>permalink_defaults:</p>
-<p><strong>重点</strong></p>
-<p>deploy:</p>
-<p>  type: git</p>
-<p>  repository: git@git.coding.net:lqs20115/lqs20115.git  <code>这里填写项目的SSH</code></p>
-<p>  branch: master</p>
-<p>以上步骤都完成之后，就可以部署提交了</p>
-<p><strong>部署提交</strong></p>
-<p>每次部署提交命令</p>
-<ol>
-<li>hexo clean</li>
-<li>hexo generate</li>
-<li>hexo deploy</li>
-</ol>
-<p>执行第三步之后，如果你的SSH公匙设置了密码，就会有个弹出框，输入你创建SSH公匙时创建的密码就OK了，如果你的SSH公匙没有密码，此处会自动跳过</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-从0开始学习Markdown" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -294,7 +192,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>本文内容摘自</p>
-<p><a href="http://www.jianshu.com/p/1e402922ee32/" target="_blank" rel="external"><strong>Markdown——入门指南 - 简书</strong></a></p>
+<p><a href="http://www.jianshu.com/p/1e402922ee32/"><strong>Markdown——入门指南 - 简书</strong></a></p>
 <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>标题是每篇文章都需要也是最常用的格式，在 Markdown 中，如果一段文字被定义为标题，只要在这段文字前加 # 号即可。</p>
 <p><code># 一级标题</code></p>
 <p><code>## 二级标题</code></p>
@@ -303,68 +201,6 @@
 <p><code>##### 五级标题</code></p>
 <p><code>###### 六级标题</code></p>
 <p>以此类推，总共六级标题，建议在井号后加一个空格，这是最标准的 Markdown 语法。</p>
-<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p> 无序列表使用  <strong>星号</strong>、<strong>加号</strong>  或是  <strong>减号</strong>  作为列表标记：<br>三种符号的作用是一致的</p>
-<p><code>* 列表1</code></p>
-<p><code>+ 列表2</code></p>
-<p><code>- 列表3</code></p>
-<ul>
-<li>列表1</li>
-</ul>
-<ul>
-<li>列表2</li>
-</ul>
-<ul>
-<li>列表3<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2>有序列表则直接在文字前加1. 2. 3. 符号要和文字之间加上一个字符的空格。</li>
-</ul>
-<p><code>1. 列表1</code></p>
-<p><code>2. 列表2</code></p>
-<p><code>3. 列表3</code></p>
-<ol>
-<li>列表1</li>
-<li>列表2</li>
-<li>列表3</li>
-</ol>
-<p>##链接</p>
-<p><code>链接为：[简书](http://www.jianshu.com)</code></p>
-<p><a href="http://www.jianshu.com" target="_blank" rel="external">简书</a></p>
-<p>##图片链接<br>注意，跟链接相比，括号前面加了个<code>!</code></p>
-<p><code>图片链接为：![icon](http://ww4.sinaimg.cn/bmiddle/aa397b7fjw1dzplsgpdw5j.jpg)</code></p>
-<p><img src="http://ww4.sinaimg.cn/bmiddle/aa397b7fjw1dzplsgpdw5j.jpg" alt=""></p>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>如果你需要引用一小段别处的句子，那么就要用引用的格式。只需要在文本前加入    <strong>&gt;</strong>    这种尖括号（大于号）即可</p>
-<p> <code>&gt;</code>  一盏灯， 一片昏黄； 一简书， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。</p>
-<blockquote>
-<p>一盏灯， 一片昏黄； 一简书， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。</p>
-</blockquote>
-<h5 id="诗句"><a href="#诗句" class="headerlink" title="诗句"></a>诗句</h5><blockquote>
-<p>白日依山尽</p>
-<p>黄河入海流</p>
-</blockquote>
-<h2 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h2><p>Markdown 的粗体和斜体也非常简单，用两个 <em> 包含一段文本就是粗体的语法，用一个 </em> 包含一段文本就是斜体的语法。</p>
-<p><strong>这是粗体文字</strong></p>
-<p><em>这是斜体文字</em></p>
-<h2 id="代码框"><a href="#代码框" class="headerlink" title="代码框"></a>代码框</h2><p>在一般的段落文字中，你可以使用反引号 ` 来标记代码区段，区段内的 &amp;、&lt; 和 &gt; 都会被自动的转换成 HTML 实体，这项特性让你可以很容易的在代码区段内插入 HTML 码：</p>
-<p>I strongly recommend against using any <code>&lt;blink&gt;</code> tags.</p>
-<p>I wish SmartyPants used named entities like <code>&amp;mdash;</code></p>
-<p>instead of decimal-encoded entites like <code>&amp;#8212;</code>.</p>
-<p>如果要建立一个已经格式化好的代码区块，只要每行都缩进 4 个空格或是一个 tab 就可以了，而 &amp;、&lt; 和 &gt; 也一样会自动转成 HTML 实体。</p>
-<blockquote>
-<p>代码</p>
-</blockquote>
-<pre><code> OkHttpClient.Builder builder = new OkHttpClient.Builder();
-builder.connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
-
-retrofit = new Retrofit.Builder()
-        .client(builder.build())
-        .addConverterFactory(GsonConverterFactory.create())
-        .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-        .baseUrl(BASE_URL)
-        .build();
-</code></pre><h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>分割线的语法只需要三个 * 号，</p>
-<blockquote>
-<p>例如：<code>***</code></p>
-</blockquote>
-<hr>
-
       
     </div>
     
@@ -377,6 +213,72 @@ retrofit = new Retrofit.Builder()
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/27/从0开始学习Markdown/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Hexo-Git-搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/27/Hexo-Git-搭建个人博客/" class="article-date">
+  	<time datetime="2016-05-27T03:10:20.000Z" itemprop="datePublished">2016-05-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/27/Hexo-Git-搭建个人博客/">Hexo+Git 搭建个人博客</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##配置环境</p>
+<p>安装    <a href="https://nodejs.org/en/"><strong>Node.js</strong></a>    （必须）</p>
+<p>作用：用来生成静态页面的</p>
+<p>到<a href="https://nodejs.org/en/"><strong>Node.js官网</strong></a>下载相应平台的最新版本，一路安装即可。</p>
+<p>安装    <a href="https://git-scm.com/download/"><strong>Git</strong></a>        （必须）</p>
+<p>作用：把本地的hexo内容提交到github上去.</p>
+<p>没安装Git的推荐看下 <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000"><strong>廖雪峰的官方网站</strong></a></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/27/Hexo-Git-搭建个人博客/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
