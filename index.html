@@ -105,7 +105,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a>
+						<a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/学习笔记/" style="font-size: 20px;">学习笔记</a>
 					</div>
 				</section>
 				
@@ -168,6 +168,69 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-RxAndroid-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/07/RxAndroid-1/" class="article-date">
+  	<time datetime="2016-06-07T07:40:53.000Z" itemprop="datePublished">2016-06-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/07/RxAndroid-1/">RxJava 学习笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="RxJava-是什么？"><a href="#RxJava-是什么？" class="headerlink" title="RxJava 是什么？"></a>RxJava 是什么？</h3><p>我的理解就是观察者模式，RxJava 最核心的东西就是 <strong>Observable</strong> （<code>被观察者</code>） 和 <strong>Observer</strong> (<code>观察者</code>) 。</p>
+<p><strong>Observable</strong> （<code>被观察者</code>） 会发出数据，而与之相对的 <strong>Observer</strong> (<code>观察者</code>) 则会通过订阅<strong>Observable</strong>（<code>被观察者</code>） 来进行观察。</p>
+<p><strong>Observer</strong>可以在<strong>Observable</strong>发出数据、报错或者声明没有数据可以发送时进行相应的操作。这三个操作被封装在<strong>Observer</strong>接口中，相应的方法为<code>onNext()</code>，<code>onError()</code>和<code>onCompleted()</code>。</p>
+<h3 id="RxJava的优点"><a href="#RxJava的优点" class="headerlink" title="RxJava的优点"></a>RxJava的优点</h3><p>所有的逻辑业务都封装成一条链式结构，使其看起来很 <strong>简洁</strong>。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/07/RxAndroid-1/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-Hexo-Git-Build a personal blog" class="article article-type-post" itemscope itemprop="blogPost">
   
