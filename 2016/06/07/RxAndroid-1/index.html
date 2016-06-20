@@ -4,28 +4,31 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>RxJava 学习笔记 | 坚持</title>
+  <title>RxJava 学习笔记 1 | 坚持</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="RxJava 是什么？我的理解就是观察者模式，RxJava 最核心的东西就是 Observable （被观察者） 和 Observer (观察者) 。
+  <meta name="description" content="地址
+RxJava 是什么？我的理解就是观察者模式，RxJava 最核心的东西就是 Observable （被观察者） 和 Observer (观察者) 。
 Observable （被观察者） 会发出数据，而与之相对的 Observer (观察者) 则会通过订阅Observable（被观察者） 来进行观察。
-Observer可以在Observable发出数据、报错或者声明没有数据可以发送时进行相应的操作">
+Observer可以在Observable发出数据、报错或者声明没有数据可以发送时进行相应">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RxJava 学习笔记">
+<meta property="og:title" content="RxJava 学习笔记 1">
 <meta property="og:url" content="http://www.lqs1993.cc/2016/06/07/RxAndroid-1/index.html">
 <meta property="og:site_name" content="坚持">
-<meta property="og:description" content="RxJava 是什么？我的理解就是观察者模式，RxJava 最核心的东西就是 Observable （被观察者） 和 Observer (观察者) 。
+<meta property="og:description" content="地址
+RxJava 是什么？我的理解就是观察者模式，RxJava 最核心的东西就是 Observable （被观察者） 和 Observer (观察者) 。
 Observable （被观察者） 会发出数据，而与之相对的 Observer (观察者) 则会通过订阅Observable（被观察者） 来进行观察。
-Observer可以在Observable发出数据、报错或者声明没有数据可以发送时进行相应的操作">
+Observer可以在Observable发出数据、报错或者声明没有数据可以发送时进行相应">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/52eb2279jw1f2rx409pcnj2044048mx5.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx4ddcncj2046053gll.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/52eb2279jw1f2rx4fitvfj20hw0ea0tg.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/52eb2279jw1f2rx4i8da2j20hg0dydgx.jpg">
-<meta property="og:updated_time" content="2016-06-20T07:32:50.333Z">
+<meta property="og:updated_time" content="2016-06-20T08:21:03.950Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RxJava 学习笔记">
-<meta name="twitter:description" content="RxJava 是什么？我的理解就是观察者模式，RxJava 最核心的东西就是 Observable （被观察者） 和 Observer (观察者) 。
+<meta name="twitter:title" content="RxJava 学习笔记 1">
+<meta name="twitter:description" content="地址
+RxJava 是什么？我的理解就是观察者模式，RxJava 最核心的东西就是 Observable （被观察者） 和 Observer (观察者) 。
 Observable （被观察者） 会发出数据，而与之相对的 Observer (观察者) 则会通过订阅Observable（被观察者） 来进行观察。
-Observer可以在Observable发出数据、报错或者声明没有数据可以发送时进行相应的操作">
+Observer可以在Observable发出数据、报错或者声明没有数据可以发送时进行相应">
 <meta name="twitter:image" content="http://ww4.sinaimg.cn/large/52eb2279jw1f2rx409pcnj2044048mx5.jpg">
   
     <link rel="alternative" href="/atom.xml" title="坚持" type="application/atom+xml">
@@ -196,7 +199,7 @@ Observer可以在Observable发出数据、报错或者声明没有数据可以�
         
   
     <h1 class="article-title" itemprop="name">
-      RxJava 学习笔记
+      RxJava 学习笔记 1
     </h1>
   
 
@@ -216,7 +219,8 @@ Observer可以在Observable发出数据、报错或者声明没有数据可以�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="RxJava-是什么？"><a href="#RxJava-是什么？" class="headerlink" title="RxJava 是什么？"></a>RxJava 是什么？</h3><p>我的理解就是观察者模式，RxJava 最核心的东西就是 <strong>Observable</strong> （<code>被观察者</code>） 和 <strong>Observer</strong> (<code>观察者</code>) 。</p>
+        <p><strong><a href="http://www.lqs1993.cc/">地址</a></strong></p>
+<h3 id="RxJava-是什么？"><a href="#RxJava-是什么？" class="headerlink" title="RxJava 是什么？"></a>RxJava 是什么？</h3><p>我的理解就是观察者模式，RxJava 最核心的东西就是 <strong>Observable</strong> （<code>被观察者</code>） 和 <strong>Observer</strong> (<code>观察者</code>) 。</p>
 <p><strong>Observable</strong> （<code>被观察者</code>） 会发出数据，而与之相对的 <strong>Observer</strong> (<code>观察者</code>) 则会通过订阅<strong>Observable</strong>（<code>被观察者</code>） 来进行观察。</p>
 <p><strong>Observer</strong>可以在<strong>Observable</strong>发出数据、报错或者声明没有数据可以发送时进行相应的操作。这三个操作被封装在<strong>Observer</strong>接口中，相应的方法为<code>onNext()</code>，<code>onError()</code>和<code>onCompleted()</code>。</p>
 <h3 id="RxJava的优点"><a href="#RxJava的优点" class="headerlink" title="RxJava的优点"></a>RxJava的优点</h3><p>所有的逻辑业务都封装成一条链式结构，使其看起来很 <strong>简洁</strong>。<br><a id="more"></a></p>
@@ -614,7 +618,7 @@ Observable.from(students)
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          RxAndroid-2
+          RxJava 学习笔记 2
         
       </div>
     </a>
@@ -667,7 +671,7 @@ Observable.from(students)
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="RxAndroid-1" data-title="RxJava 学习笔记" data-url="http://www.lqs1993.cc/2016/06/07/RxAndroid-1/"></div>
+	<div class="ds-thread" data-thread-key="RxAndroid-1" data-title="RxJava 学习笔记 1" data-url="http://www.lqs1993.cc/2016/06/07/RxAndroid-1/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
