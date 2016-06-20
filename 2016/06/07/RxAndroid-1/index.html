@@ -20,7 +20,7 @@ Observer可以在Observable发出数据、报错或者声明没有数据可以�
 <meta property="og:image" content="http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx4ddcncj2046053gll.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/52eb2279jw1f2rx4fitvfj20hw0ea0tg.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/52eb2279jw1f2rx4i8da2j20hg0dydgx.jpg">
-<meta property="og:updated_time" content="2016-06-13T06:51:20.433Z">
+<meta property="og:updated_time" content="2016-06-20T07:32:50.333Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RxJava 学习笔记">
 <meta name="twitter:description" content="RxJava 是什么？我的理解就是观察者模式，RxJava 最核心的东西就是 Observable （被观察者） 和 Observer (观察者) 。
@@ -117,7 +117,7 @@ Observer可以在Observable发出数据、报错或者声明没有数据可以�
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/学习笔记/" style="font-size: 20px;">学习笔记</a>
+						<a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a>
 					</div>
 				</section>
 				
@@ -600,7 +600,7 @@ Observable.from(students)
     .subscribeOn(AndroidSchedulers.mainThread()) // 指定主线程
     .observeOn(AndroidSchedulers.mainThread())
     .subscribe(subscriber);
-</code></pre><p>如上，在 doOnSubscribe()的后面跟一个 subscribeOn() ，就能指定准备工作的线程了。</p>
+</code></pre><p>如上，在<code>doOnSubscribe()</code>的后面跟一个 <code>subscribeOn()</code> ，就能指定准备工作的线程了。</p>
 <h4 id="部分内容摘自-扔物线"><a href="#部分内容摘自-扔物线" class="headerlink" title="部分内容摘自 扔物线"></a>部分内容摘自 <a href="http://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="external">扔物线</a></h4>
       
     </div>
@@ -609,6 +609,15 @@ Observable.from(students)
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/06/20/RxAndroid-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          RxAndroid-2
+        
+      </div>
+    </a>
   
   
     <a href="/2016/05/27/Markdown/" id="article-nav-older" class="article-nav-link-wrap">
