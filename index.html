@@ -196,123 +196,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="RxJava-的适用场景和使用方式"><a href="#RxJava-的适用场景和使用方式" class="headerlink" title="RxJava 的适用场景和使用方式"></a>RxJava 的适用场景和使用方式</h3><h4 id="1、与-Retrofit-的结合"><a href="#1、与-Retrofit-的结合" class="headerlink" title="1、与 Retrofit 的结合"></a>1、与 Retrofit 的结合</h4><blockquote>
-<p>Retrofit 是 Square 的一个著名的网络请求库。没有用过 Retrofit 的可以选择跳过这一小节也没关系，我举的每种场景都只是个例子，而且例子之间并无前后关联，只是个抛砖引玉的作用，所以你跳过这里看别的场景也可以的。</p>
-</blockquote>
-<p>Retrofit 除了提供了传统的 <code>Callback</code> 形式的 API，还有 RxJava 版本的 <code>Observable</code> 形式 API。下面我用对比的方式来介绍 Retrofit 的 RxJava 版 API 和传统版本的区别。</p>
-<p>以获取一个 User 对象的接口作为例子。使用Retrofit 的传统 API，你可以用这样的方式来定义请求：</p>
-<pre><code>@FormUrlEncoded
-@POST(&quot;web/app.php/funmi/user&quot;)
-void getUser(@Field(&quot;userName&quot;) String userName,
-           @Field(&quot;password&quot;) String password, @Field(&quot;stype&quot;) int stype,
-           Callback&lt;User&gt; callback);
-</code></pre><p>在程序的构建过程中， Retrofit 会把自动把方法实现并生成代码，然后开发者就可以利用下面的方法来获取特定用户并处理响应：<br>    getUser(userName,password,stype, new Callback<user>() {<br>        @Override<br>        public void success(User user) {<br>            userView.setUser(user);<br>        }</user></p>
-<pre><code>    @Override
-    public void failure(RetrofitError error) {
-        // Error handling
-        ...
-    }
-};
-</code></pre><p>而使用 RxJava 形式的 API，定义同样的请求是这样的：</p>
-<pre><code>@FormUrlEncoded
-@POST(&quot;web/app.php/funmi/user&quot;)
-Observable&lt;BaseEntity&lt;User&gt;&gt; getUser(@Field(&quot;userName&quot;) String userName,
-                                          @Field(&quot;password&quot;) String password, @Field(&quot;stype&quot;) int stype);
-</code></pre><p>使用的时候是这样的：</p>
-<pre><code>getUser(userName,password,stype)
-.observeOn(AndroidSchedulers.mainThread())
-.subscribe(new Observer&lt;User&gt;() {
-        @Override
-        public void onNext(User user) {
-            userView.setUser(user);
-        }
-
-        @Override
-        public void onCompleted() {
-        }
-
-        @Override
-        public void onError(Throwable error) {
-            // Error handling
-            ...
-        }
-});
-</code></pre><p>再举一个例子：假设 <code>/user</code> 接口并不能直接访问，而需要填入一个在线获取的 <code>token</code> ，代码应该怎么写？</p>
-<p><code>Callback</code> 方式，可以使用嵌套的 <code>Callback</code>：<br>    @GET(“web/app.php/funmi/token”)<br>    public void getToken(Callback<string> callback);</string></p>
-<pre><code>@GET(&quot;web/app.php/funmi/user&quot;)
-public void getUser(@Query(&quot;token&quot;) String token, @Query(&quot;userId&quot;) String userId, Callback&lt;User&gt; callback);
-
-...
-
-getToken(new Callback&lt;String&gt;() {
-    @Override
-    public void success(String token) {
-        getUser(token, userId, new Callback&lt;User&gt;() {
-                @Override
-                public void success(User user) {
-                    userView.setUser(user);
-                }
-
-                @Override
-                public void failure(RetrofitError error) {
-                    // Error handling
-                    ...
-                }
-            };
-        }
-
-        @Override
-        public void failure(RetrofitError error) {
-            // Error handling
-            ...
-        }
-});
-</code></pre><p>而使用 RxJava 的话，代码是这样的：<br>    @GET(“web/app.php/funmi/token”)<br>    public Observable<string> getToken();</string></p>
-<pre><code>@GET(&quot;web/app.php/funmi/user&quot;)
-public Observable&lt;User&gt; getUser(@Query(&quot;token&quot;) String token, @Query(&quot;userId&quot;) String userId);
-
-...
-
-getToken()
-    .flatMap(new Func1&lt;String, Observable&lt;User&gt;&gt;() {
-        @Override
-        public Observable&lt;User&gt; onNext(String token) {
-            return getUser(token, userId);
-        })
-    .observeOn(AndroidSchedulers.mainThread())
-    .subscribe(new Observer&lt;User&gt;() {
-        @Override
-        public void onNext(User user) {
-            userView.setUser(user);
-        }
-
-        @Override
-        public void onCompleted() {
-        }
-
-        @Override
-        public void onError(Throwable error) {
-            // Error handling
-            ...
-        }
-});
-</code></pre><p>用一个 <code>flatMap()</code> 就搞定了逻辑，依然是一条链。看着就很爽，是吧？</p>
-<h4 id="2、-RxBinding"><a href="#2、-RxBinding" class="headerlink" title="2、 RxBinding"></a>2、 RxBinding</h4><p><a href="https://github.com/JakeWharton/RxBinding" target="_blank" rel="external">RxBinding</a> 是 Jake Wharton 的一个开源库，它提供了一套在 Android 平台上的基于 RxJava 的 Binding API。所谓 Binding，就是类似设置 <code>OnClickListener</code> 、设置 <code>TextWatcher</code> 这样的注册绑定对象的 API。</p>
-<p>举个设置点击监听的例子。使用 <code>RxBinding</code> ，可以把事件监听用这样的方法来设置：</p>
-<pre><code>Button button = ...;
-RxView.clickEvents(button) // 以 Observable 形式来反馈点击事件
-    .subscribe(new Action1&lt;ViewClickEvent&gt;() {
-        @Override
-        public void call(ViewClickEvent event) {
-            // Click handling
-        }
-});
-</code></pre><p>看起来除了形式变了没什么区别，实质上也是这样。甚至如果你看一下它的源码，你会发现它连实现都没什么惊喜：它的内部是直接用一个包裹着的 <code>setOnClickListener()</code> 来实现的。然而，仅仅这一个形式的改变，却恰好就是 <code>RxBinding</code> 的目的：扩展性。通过 <code>RxBinding</code> 把点击监听转换成 <code>Observable</code> 之后，就有了对它进行扩展的可能。扩展的方式有很多，根据需求而定。一个例子是前面提到过的 <code>throttleFirst()</code> ，用于去抖动，也就是消除手抖导致的快速连环点击：</p>
-<pre><code>RxView.clickEvents(button)
-.throttleFirst(500, TimeUnit.MILLISECONDS)
-.subscribe(clickAction);
-</code></pre><h4 id="3、各种异步操作"><a href="#3、各种异步操作" class="headerlink" title="3、各种异步操作"></a>3、各种异步操作</h4><p>前面举的 <code>Retrofit</code> 和 <code>RxBinding</code> 的例子，是两个可以提供现成的 <code>Observable</code> 的库。而如果你有某些异步操作无法用这些库来自动生成 <code>Observable</code>，也完全可以自己写。例如数据库的读写、大图片的载入、文件压缩/解压等各种需要放在后台工作的耗时操作，都可以用 <code>RxJava</code> 来实现，有了之前几章的例子，这里应该不用再举例了。</p>
-<h4 id="4、RxBus"><a href="#4、RxBus" class="headerlink" title="4、RxBus"></a>4、RxBus</h4><p><code>RxBus</code> 名字看起来像一个库，但它并不是一个库，而是一种模式，它的思想是使用 <code>RxJava</code> 来实现了 <code>EventBus</code> ，而让你不再需要使用 <code>Otto</code> 或者 GreenRobot 的 <code>EventBus</code>。至于什么是 RxBus，可以看这篇文章。顺便说一句，Flipboard 已经用 <code>RxBus</code> 替换掉了 <code>Otto</code> ，目前为止没有不良反应。</p>
-<h4 id="部分内容摘自-扔物线"><a href="#部分内容摘自-扔物线" class="headerlink" title="部分内容摘自 扔物线"></a>部分内容摘自 <a href="http://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="external">扔物线</a></h4>
+<p>Retrofit 是 Square 的一个著名的网络请求库。没有用过 Retrofit 的可以选择跳过这一小节也没关系，我举的每种场景都只是个例子，而且例子之间并无前后关联，只是个抛砖引玉的作用，所以你跳过这里看别的场景也可以的。<br>
       
     </div>
     
@@ -325,6 +209,10 @@ RxView.clickEvents(button) // 以 Observable 形式来反馈点击事件
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/20/RxAndroid-2/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

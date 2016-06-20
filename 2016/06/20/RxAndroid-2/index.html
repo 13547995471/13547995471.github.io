@@ -7,24 +7,18 @@
   <title>RxAndroid-2 | 坚持</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="RxJava 的适用场景和使用方式1、与 Retrofit 的结合
-Retrofit 是 Square 的一个著名的网络请求库。没有用过 Retrofit 的可以选择跳过这一小节也没关系，我举的每种场景都只是个例子，而且例子之间并无前后关联，只是个抛砖引玉的作用，所以你跳过这里看别的场景也可以的。
-
-Retrofit 除了提供了传统的 Callback 形式的 API，还有 RxJava 版本的">
+Retrofit 是 Square 的一个著名的网络请求库。没有用过 Retrofit 的可以选择跳过这一小节也没关系，我举的每种场景都只是个例子，而且例子之间并无前后关联，只是个抛砖引玉的作用，所以你跳过这里看别的场景也可以的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RxAndroid-2">
 <meta property="og:url" content="http://www.lqs1993.cc/2016/06/20/RxAndroid-2/index.html">
 <meta property="og:site_name" content="坚持">
 <meta property="og:description" content="RxJava 的适用场景和使用方式1、与 Retrofit 的结合
-Retrofit 是 Square 的一个著名的网络请求库。没有用过 Retrofit 的可以选择跳过这一小节也没关系，我举的每种场景都只是个例子，而且例子之间并无前后关联，只是个抛砖引玉的作用，所以你跳过这里看别的场景也可以的。
-
-Retrofit 除了提供了传统的 Callback 形式的 API，还有 RxJava 版本的">
-<meta property="og:updated_time" content="2016-06-20T07:52:56.045Z">
+Retrofit 是 Square 的一个著名的网络请求库。没有用过 Retrofit 的可以选择跳过这一小节也没关系，我举的每种场景都只是个例子，而且例子之间并无前后关联，只是个抛砖引玉的作用，所以你跳过这里看别的场景也可以的。">
+<meta property="og:updated_time" content="2016-06-20T07:55:29.758Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RxAndroid-2">
 <meta name="twitter:description" content="RxJava 的适用场景和使用方式1、与 Retrofit 的结合
-Retrofit 是 Square 的一个著名的网络请求库。没有用过 Retrofit 的可以选择跳过这一小节也没关系，我举的每种场景都只是个例子，而且例子之间并无前后关联，只是个抛砖引玉的作用，所以你跳过这里看别的场景也可以的。
-
-Retrofit 除了提供了传统的 Callback 形式的 API，还有 RxJava 版本的">
+Retrofit 是 Square 的一个著名的网络请求库。没有用过 Retrofit 的可以选择跳过这一小节也没关系，我举的每种场景都只是个例子，而且例子之间并无前后关联，只是个抛砖引玉的作用，所以你跳过这里看别的场景也可以的。">
   
     <link rel="alternative" href="/atom.xml" title="坚持" type="application/atom+xml">
   
@@ -215,9 +209,8 @@ Retrofit 除了提供了传统的 Callback 形式的 API，还有 RxJava 版本�
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="RxJava-的适用场景和使用方式"><a href="#RxJava-的适用场景和使用方式" class="headerlink" title="RxJava 的适用场景和使用方式"></a>RxJava 的适用场景和使用方式</h3><h4 id="1、与-Retrofit-的结合"><a href="#1、与-Retrofit-的结合" class="headerlink" title="1、与 Retrofit 的结合"></a>1、与 Retrofit 的结合</h4><blockquote>
-<p>Retrofit 是 Square 的一个著名的网络请求库。没有用过 Retrofit 的可以选择跳过这一小节也没关系，我举的每种场景都只是个例子，而且例子之间并无前后关联，只是个抛砖引玉的作用，所以你跳过这里看别的场景也可以的。</p>
+<p>Retrofit 是 Square 的一个著名的网络请求库。没有用过 Retrofit 的可以选择跳过这一小节也没关系，我举的每种场景都只是个例子，而且例子之间并无前后关联，只是个抛砖引玉的作用，所以你跳过这里看别的场景也可以的。<br><a id="more"></a><br>Retrofit 除了提供了传统的 <code>Callback</code> 形式的 API，还有 RxJava 版本的 <code>Observable</code> 形式 API。下面我用对比的方式来介绍 Retrofit 的 RxJava 版 API 和传统版本的区别。</p>
 </blockquote>
-<p>Retrofit 除了提供了传统的 <code>Callback</code> 形式的 API，还有 RxJava 版本的 <code>Observable</code> 形式 API。下面我用对比的方式来介绍 Retrofit 的 RxJava 版 API 和传统版本的区别。</p>
 <p>以获取一个 User 对象的接口作为例子。使用Retrofit 的传统 API，你可以用这样的方式来定义请求：</p>
 <pre><code>@FormUrlEncoded
 @POST(&quot;web/app.php/funmi/user&quot;)
