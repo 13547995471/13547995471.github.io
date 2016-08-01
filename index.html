@@ -105,7 +105,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a>
+						<a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/学习笔记/" style="font-size: 20px;">学习笔记</a>
 					</div>
 				</section>
 				
@@ -169,6 +169,80 @@
 
       <div class="body-wrap">
   
+    <article id="post-Android动态显示和隐藏状态栏" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/01/Android动态显示和隐藏状态栏/" class="article-date">
+  	<time datetime="2016-08-01T03:12:45.000Z" itemprop="datePublished">2016-08-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/01/Android动态显示和隐藏状态栏/">Android动态显示和隐藏状态栏</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#动态显示和隐藏状态栏<br>小米Launcher有一个细节上的功能效果：在长按桌面应用图标时，会隐藏状态栏，然后在状态栏原有的布局上显示卸载或删除的操作栏。放手后，操作栏隐藏，状态栏显示出来。也就是说，这个过程是涉及到对状态栏的动态操作的。</p>
+<p>   View类提供了setSystemUiVisibility和getSystemUiVisibility方法，这两个方法实现对状态栏的动态显示或隐藏的操作，以及获取状态栏当前可见性。</p>
+<p>   <strong>setSystemUiVisibility(int visibility)</strong>方法可传入的实参为：</p>
+<pre><code>1. **View.SYSTEM_UI_FLAG_VISIBLE**：显示状态栏，Activity不全屏显示(恢复到有状态的正常情况)。
+
+2. **View.INVISIBLE**：隐藏状态栏，同时Activity会伸展全屏显示。
+
+3.** View.SYSTEM_UI_FLAG_FULLSCREEN：Activit**y全屏显示，且状态栏被隐藏覆盖掉。
+
+4. **View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN：Activity**全屏显示，但状态栏不会被隐藏覆盖，状态栏依然可见，Activity顶端布局部分会被状态遮住。
+
+5. **View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION**：效果同**View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN**
+
+6. **View.SYSTEM_UI_LAYOUT_FLAGS**：效果同**View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN**
+
+7. **View.SYSTEM_UI_FLAG_HIDE_NAVIGATION**：隐藏虚拟按键(导航栏)。有些手机会用虚拟按键来代替物理按键。
+
+8. **View.SYSTEM_UI_FLAG_LOW_PROFILE**：状态栏显示处于低能显示状态(low profile模式)，状态栏上一些图标显示会被隐藏。
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-RxAndroid-2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -195,8 +269,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong><a href="http://www.lqs1993.cc/">地址</a></strong></p>
-<h3 id="RxJava-的适用场景和使用方式"><a href="#RxJava-的适用场景和使用方式" class="headerlink" title="RxJava 的适用场景和使用方式"></a>RxJava 的适用场景和使用方式</h3><h4 id="1、与-Retrofit-的结合"><a href="#1、与-Retrofit-的结合" class="headerlink" title="1、与 Retrofit 的结合"></a>1、与 Retrofit 的结合</h4><blockquote>
+        <h3 id="RxJava-的适用场景和使用方式"><a href="#RxJava-的适用场景和使用方式" class="headerlink" title="RxJava 的适用场景和使用方式"></a>RxJava 的适用场景和使用方式</h3><h4 id="1、与-Retrofit-的结合"><a href="#1、与-Retrofit-的结合" class="headerlink" title="1、与 Retrofit 的结合"></a>1、与 Retrofit 的结合</h4><blockquote>
 <p>Retrofit 是 Square 的一个著名的网络请求库。没有用过 Retrofit 的可以选择跳过这一小节也没关系，我举的每种场景都只是个例子，而且例子之间并无前后关联，只是个抛砖引玉的作用，所以你跳过这里看别的场景也可以的。<br>
       
     </div>
@@ -205,7 +278,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
 	</div>
 
       
@@ -257,8 +330,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong><a href="http://www.lqs1993.cc/">地址</a></strong></p>
-<h3 id="RxJava-是什么？"><a href="#RxJava-是什么？" class="headerlink" title="RxJava 是什么？"></a>RxJava 是什么？</h3><p>我的理解就是观察者模式，RxJava 最核心的东西就是 <strong>Observable</strong> （<code>被观察者</code>） 和 <strong>Observer</strong> (<code>观察者</code>) 。</p>
+        <h3 id="RxJava-是什么？"><a href="#RxJava-是什么？" class="headerlink" title="RxJava 是什么？"></a>RxJava 是什么？</h3><p>我的理解就是观察者模式，RxJava 最核心的东西就是 <strong>Observable</strong> （<code>被观察者</code>） 和 <strong>Observer</strong> (<code>观察者</code>) 。</p>
 <p><strong>Observable</strong> （<code>被观察者</code>） 会发出数据，而与之相对的 <strong>Observer</strong> (<code>观察者</code>) 则会通过订阅<strong>Observable</strong>（<code>被观察者</code>） 来进行观察。</p>
 <p><strong>Observer</strong>可以在<strong>Observable</strong>发出数据、报错或者声明没有数据可以发送时进行相应的操作。这三个操作被封装在<strong>Observer</strong>接口中，相应的方法为<code>onNext()</code>，<code>onError()</code>和<code>onCompleted()</code>。</p>
 <h3 id="RxJava的优点"><a href="#RxJava的优点" class="headerlink" title="RxJava的优点"></a>RxJava的优点</h3><p>所有的逻辑业务都封装成一条链式结构，使其看起来很 <strong>简洁</strong>。<br>
@@ -269,7 +341,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
 	</div>
 
       
