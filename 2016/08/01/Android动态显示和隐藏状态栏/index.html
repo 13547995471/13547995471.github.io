@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="坚持">
 <meta property="og:description" content="#动态显示和隐藏状态栏小米Launcher有一个细节上的功能效果：在长按桌面应用图标时，会隐藏状态栏，然后在状态栏原有的布局上显示卸载或删除的操作栏。放手后，操作栏隐藏，状态栏显示出来。也就是说，这个过程是涉及到对状态栏的动态操作的。
    View类提供了setSystemUiVisibility和getSystemUiVisibility方法，这两个方法实现对状态栏的动态显示或隐藏的操作，以及">
-<meta property="og:updated_time" content="2016-08-01T06:25:23.226Z">
+<meta property="og:updated_time" content="2016-08-26T09:35:56.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android动态显示和隐藏状态栏">
 <meta name="twitter:description" content="#动态显示和隐藏状态栏小米Launcher有一个细节上的功能效果：在长按桌面应用图标时，会隐藏状态栏，然后在状态栏原有的布局上显示卸载或删除的操作栏。放手后，操作栏隐藏，状态栏显示出来。也就是说，这个过程是涉及到对状态栏的动态操作的。
@@ -209,8 +209,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>#动态显示和隐藏状态栏<br>小米Launcher有一个细节上的功能效果：在长按桌面应用图标时，会隐藏状态栏，然后在状态栏原有的布局上显示卸载或删除的操作栏。放手后，操作栏隐藏，状态栏显示出来。也就是说，这个过程是涉及到对状态栏的动态操作的。</p>
-<p>   View类提供了setSystemUiVisibility和getSystemUiVisibility方法，这两个方法实现对状态栏的动态显示或隐藏的操作，以及获取状态栏当前可见性。</p>
-<p>   <strong>setSystemUiVisibility(int visibility)</strong>方法可传入的实参为：</p>
+<p>   View类提供了setSystemUiVisibility和getSystemUiVisibility方法，这两个方法实现对状态栏的动态显示或隐藏的操作，以及获取状态栏当前可见性。<br><a id="more"></a><br>   <strong>setSystemUiVisibility(int visibility)</strong>方法可传入的实参为：</p>
 <pre><code>1. View.SYSTEM_UI_FLAG_VISIBLE    #显示状态栏，Activity不全屏显示(恢复到有状态的正常情况)。
 
 2. View.INVISIBLE    #隐藏状态栏，同时Activity会伸展全屏显示。
